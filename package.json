@@ -2,7 +2,6 @@
   "name": "yildizusv_v1",
   "version": "0.0.1",
   "private": true,
-  "packageManager": "pnpm@10.8.1",
   "description": "Vite + React + Electron with Doubleshot, so fast!",
   "main": "dist/main/index.js",
   "scripts": {
@@ -11,15 +10,19 @@
     "build": "rimraf dist && vite build",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "test:e2e": "playwright test",
     "postinstall": "electron-builder install-app-deps",
     "dev:renderer": "vite --config vite.config.mts --mode development",
     "build:renderer": "vite build --config vite.config.mts --mode production",
     "package:electron-app:mac": "electron-builder build --mac --publish never",
     "package:electron-app:win": "electron-builder build --win --publish never",
     "package:electron-app:linux": "electron-builder build --linux --publish never",
-    "clean": "rimraf dist node_modules/.vite && taskkill /f /im electron.exe || exit 0",
+    "clean": "rimraf dist node_modules/.vite",
     "backend": "cd backend/server && python3 main.py",
-    "dev:full": "concurrently \"pnpm dev\" \"pnpm backend\"",
+    "dev:full": "concurrently \"npm run dev\" \"npm run backend\"",
     "start:all": "concurrently \"npm run dev\" \"npm run backend\""
   },
   "dependencies": {
@@ -64,12 +67,6 @@
     "vite": "^6.1.0",
     "vite-plugin-doubleshot": "^0.0.18",
     "concurrently": "^9.0.1"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@nestjs/core",
-      "electron"
-    ]
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"

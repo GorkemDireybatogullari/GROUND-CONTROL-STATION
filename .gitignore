@@ -21,6 +21,19 @@ __pycache__/
 .Python
 env/
 venv/
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+.coverage.*
+*.egg-info/
+
+# Playwright / Vitest
+test-results/
+playwright-report/
+playwright/.cache/
 
 # IDE Files
 .vscode/
@@ -45,8 +58,9 @@ logs/
 .env.test.local
 .env.production.local
 
-# Package Manager Lock Files 
+# Package Manager Lock Files
 pnpm-lock.yaml
+yarn.lock
 
 # Electron
 release/
@@ -60,19 +74,13 @@ coverage/
 *.tmp
 *.temp
 
-# Test Files & Directories
-backend/tests/
-src/**/__tests__/
-src/**/*.test.ts
-src/**/*.test.tsx
-src/**/*.spec.ts
-src/**/*.spec.tsx
-*.test.js
-*.test.ts
-*.spec.js
-*.spec.ts
-
 # Backup files
 *backup
 *.backup
+
+# Local-only planning / scratch docs
+docs/MODERNIZATION_PLAN.md
+docs/*.local.md
+NOTES.md
+TODO.md
 

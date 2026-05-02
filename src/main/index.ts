@@ -4,8 +4,6 @@ import { NestFactory } from '@nestjs/core'
 import { app } from 'electron'
 import { AppModule } from './app.module'
 
-process.env.ELECTRON_DISABLE_SECURITY_WARNINGS = 'true'
-
 async function electronAppInit() {
   const isDev = !app.isPackaged
   app.on('window-all-closed', () => {
