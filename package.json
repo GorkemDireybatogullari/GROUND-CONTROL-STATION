@@ -21,7 +21,7 @@
     "package:electron-app:win": "electron-builder build --win --publish never",
     "package:electron-app:linux": "electron-builder build --linux --publish never",
     "clean": "rimraf dist node_modules/.vite",
-    "backend": "cd backend/server && python3 main.py",
+    "backend": "cd backend && python3 -m app.main",
     "dev:full": "concurrently \"npm run dev\" \"npm run backend\"",
     "start:all": "concurrently \"npm run dev\" \"npm run backend\""
   },
