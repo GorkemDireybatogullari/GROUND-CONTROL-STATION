@@ -54,19 +54,32 @@
   },
   "devDependencies": {
     "@lightwing/eslint-config": "^1.0.104",
+    "@playwright/test": "^1.48.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.0.1",
+    "@testing-library/user-event": "^14.5.2",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
     "@vitejs/plugin-react": "^4.3.4",
+    "@vitest/coverage-v8": "^2.1.4",
+    "concurrently": "^9.0.1",
     "electron": "^35.0.0",
     "electron-builder": "^26.0.0",
     "eslint": "^9.20.1",
+    "jsdom": "^25.0.1",
     "lint-staged": "^15.4.3",
     "rimraf": "^6.0.1",
     "simple-git-hooks": "^2.11.1",
     "typescript": "^5.7.3",
     "vite": "^6.1.0",
     "vite-plugin-doubleshot": "^0.0.18",
-    "concurrently": "^9.0.1"
+    "vitest": "^2.1.4"
+  },
+  "overrides": {
+    "react-typescript-flight-indicators": {
+      "react": "^19.0.0",
+      "react-dom": "^19.0.0"
+    }
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"
@@ -75,11 +88,5 @@
     "*.{js,ts,tsx,vue,md,json,yml}": [
       "eslint --fix"
     ]
-  },
-  "overrides": {
-    "react-typescript-flight-indicators": {
-      "react": "^19.0.0",
-      "react-dom": "^19.0.0"
-    }
   }
 }
